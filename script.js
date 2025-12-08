@@ -61,6 +61,9 @@ function getStartTime() {
     interval = setInterval(underMoving, 1000);
     destinationLatitude = Number(document.getElementById("dest-latitude").value)
     destinationLongitude = Number(document.getElementById("dest-longitude").value)
+    document.getElementById("arrival-time").textContent = "";
+    document.getElementById("spended-time").textContent = "";
+    document.getElementById("arrived").textContent = "";
   }
 }
       
@@ -84,6 +87,7 @@ function underMoving() {
         document.getElementById("spended-time").textContent = getSpendTime(startTime, arrivalTime);
         document.getElementById("arrived").textContent = "到着しました🐢";
         clearInterval(interval);
+        document.getElementById("start-bottun").textContent = "到着済";
   }
 }
       
@@ -110,6 +114,7 @@ function getArrivalTimeForTest() {
   document.getElementById("arrived").textContent = "到着しました🐢";
   clearInterval(interval);
   document.getElementById("start-bottun").textContent = "出発！"
+  startTriger = 0;
 }
 
 // テスト用位置捏造処理
