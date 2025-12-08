@@ -51,15 +51,17 @@ function getStartTime() {
   //   document.getElementById("not-home").textContent = "自宅以外からは計測開始できません";
   //   return;
   // }
-  document.getElementById("start-time").textContent = makeTime();
-  document.getElementById("not-start").textContent =""
-  startTime = new Date().getTime();
-  startTriger = 1;
-  navigator.geolocation.watchPosition(success, error);
-  underMoving();
-  interval = setInterval(underMoving, 1000);
-  destinationLatitude = Number(document.getElementById("dest-latitude").value)
-  destinationLongitude = Number(document.getElementById("dest-longitude").value)
+  if (startTriger === 0) {
+    document.getElementById("start-time").textContent = makeTime();
+    document.getElementById("not-start").textContent =""
+    startTime = new Date().getTime();
+    startTriger = 1;
+    navigator.geolocation.watchPosition(success, error);
+    underMoving();
+    interval = setInterval(underMoving, 1000);
+    destinationLatitude = Number(document.getElementById("dest-latitude").value)
+    destinationLongitude = Number(document.getElementById("dest-longitude").value)
+  }
 }
       
 // 測定関数
