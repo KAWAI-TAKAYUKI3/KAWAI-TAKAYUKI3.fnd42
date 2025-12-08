@@ -5,17 +5,30 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="theme-color" content="#000000">
-  <script type="text/javascript" src="script.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <h1>DIG プログラミング基礎へようこそ！</h1>
-  <h2>Mac をお使いの方は、 <font color="blue"> Cmd + Option + J</font><br>
-    Windows/Linux をお使いの方は、 <font color="blue"> Control+Shift+J</font> <br>
-    をクリックして、デベロッパーツールを開いてください。</h2>
-  <h2>下記にユニコーンの画像が表示されていれば成功です！</h2>
-  <img src="https://cdn.dribbble.com/users/1281272/screenshots/4515441/unicorn.gif">
-  <h3>30分悩んで進まなくなったら…helpチャンネルで質問してみましょう！</h3>
-</body>
+  <div class="parent">
+    <h1>通勤時間記録⏱</h1>
+    <p>現在の緯度：<span id="current-latitude">00.0000 </span> &emsp;目的地の緯度 <input id="dest-latitude" type=text value="34.99155"></p>
+    <p>現在の経度：<span id="current-longitude">00.0000 </span> &emsp;目的地の経度 <input id="dest-longitude" type=text value="136.99503"></p><br>
+    <button id="start-bottun" type="button">出発！</button><br>
+    <div id="not-home"></div>
+    <div id="not-start"></div>
+    <div id="time">
+      <P>出発時刻：<span id="start-time"></span></P>
+      <P>到着時刻：<span id="arrival-time"></span></P>
+      <P>所要時間：<span id="spended-time"></span></P>
+    </div>
+    <p id="arrived"></p>
+    <br><br><br><br>
+    <button id="arrival-bottun" type="button">テスト用強制到着</button>
+    <br><br>
+    <button id="locate-bottun" type="button">テスト用強制位置付与</button>
+    <script type="text/javascript" src="script.js"></script>
+    <p>仮位置：仮緯度 &emsp;<input id="temp-latitude" type=text value="34.">&nbsp;<input id="temp-longitude" type=text value="136."></p>
+  </div>
+  </body>
 
 </html>
