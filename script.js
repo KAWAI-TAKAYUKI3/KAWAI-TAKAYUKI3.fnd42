@@ -14,6 +14,7 @@ function error(err) {
 navigator.geolocation.getCurrentPosition(success, error);
 
 
+
 //時刻表示関数
 function makeTime() {
   let hh = new Date().getHours()
