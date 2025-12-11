@@ -12,21 +12,8 @@
     width: 5em;
 }
 
-
 #dest-longitude {
     background-color: beige;
-    max-width: 100%;
-    width: 5em;
-}
-
-#temp-latitude {
-    background-color: rgb(46, 117, 197);
-    max-width: 100%;
-    width: 5em;
-}
-
-#temp-longitude {
-    background-color: rgb(220, 220, 245);
     max-width: 100%;
     width: 5em;
 }
