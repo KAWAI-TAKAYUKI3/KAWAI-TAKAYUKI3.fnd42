@@ -1,5 +1,4 @@
 'use strict'
-// 1行目に記載している 'use strict' は削除しないでください
 
 // 現在位置を取得の関数
 function success(position) {
@@ -10,9 +9,9 @@ function success(position) {
 function error(err) {
   window.alert(`ERROR(${err.code}): ${err.message}`);
 }
+
 // まず一発GPS取得
 navigator.geolocation.getCurrentPosition(success, error);
-
 
 
 //時刻表示関数
@@ -42,16 +41,6 @@ let interval = 1;
 
 // 開始処理
 function getStartTime() {
-  // let homeLatitiude = 34.98312;
-  // let homeLongitude = 136.98990;
-  // let accuracy = gpsAccuracy * 0.00001;
-  // if (latitude < homeLatitiude - accuracy 
-  //     || latitude > homeLatitiude + accuracy 
-  //     || longitude < homeLongitude - accuracy 
-  //     || longitude > homeLongitude + accuracy) {
-  //   document.getElementById("not-home").textContent = "自宅以外からは計測開始できません";
-  //   return;
-  // }
   if (startTriger === 0) {
     document.getElementById("start-time").textContent = makeTime();
     document.getElementById("not-start").textContent =""
@@ -102,6 +91,7 @@ function getSpendTime(start, arrival) {
   }
   return `${spendMinutes} : ${spendSeconds}`;
 }
+
 // テスト用到着処理
 function getArrivalTimeForTest() {
   if (startTriger !== 1) {
@@ -118,17 +108,8 @@ function getArrivalTimeForTest() {
   startTriger = 0;
 }
 
-// テスト用位置捏造処理
-// function generateLocationForTest() {
-//   latitude = document.getElementById("temp-latitude").value;
-//   longitude = document.getElementById("temp-longitude").value;
-// }
-
 const target = document.getElementById("start-bottun");
 target.addEventListener("click", getStartTime);
 
 const target2 = document.getElementById("arrival-bottun");
 target2.addEventListener("click", getArrivalTimeForTest);
-
-// const target3 = document.getElementById("locate-bottun");
-// target2.addEventListener("click", generateLocationForTest);
